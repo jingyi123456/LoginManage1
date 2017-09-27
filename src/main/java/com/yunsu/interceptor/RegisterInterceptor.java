@@ -17,6 +17,9 @@ public class RegisterInterceptor implements HandlerInterceptor{
         if(request.getRequestURI().indexOf("findUserByName") >= 0){
             return true;
         }
+        if(request.getRequestURI().indexOf("insertUser") >= 0){
+            return true;
+        }
 
         HttpSession session = request.getSession();
         if(session.getAttribute("register") != null){
